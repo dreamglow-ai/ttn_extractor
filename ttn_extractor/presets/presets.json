@@ -1,0 +1,12 @@
+﻿{
+  "bureau": [
+    {"label": "Rades Port", "code": "47-BF-CON-MAD-RAES-PORT"},
+    {"label": "La Goulette", "code": "48-BF-CON-MAD-LAGOULETTE"},
+    {"label": "Sfax", "code": "49-BF-CON-MAD-SFAX-PORT"}
+  ],
+  "année": [
+    {"label": "2024", "code": "2024"},
+    {"label": "2023", "code": "2023"},
+    {"label": "2022", "code": "2022"}
+  ]
+}
