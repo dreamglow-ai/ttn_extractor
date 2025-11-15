@@ -3,22 +3,39 @@
 ## Project Overview
 TTN Extractor is a simple, robust Windows automation tool for exporting manifest data from the legacy Tunisie TradeNet (TTN) desktop app. It saves hours for exporters with fast, accurate batch extraction to CSV—zero coding, French GUI, one-click workflow.
 
-**Business Need**: Tunisian exporters spend 2-3 hours daily manually copying manifest data from TTN dialogs. This tool automates the extraction process with 99%+ accuracy.
+**Business Need**: 
+Manual TTN pulls cost clients ~5,000 TND/year in labor and fines from stale or missing shipment data. TTN Extractor cuts this pain to near-zero by automating the whole process.
 
-**Tech Stack**: Python, pywinauto (UI automation), PyQt6 (French GUI), pandas (CSV export), YAML/JSON configs.
+## Tech Stack
+- Windows 10/11, Python 3.10+ (core only)
+- pywinauto (desktop UI automation)
+- PyQt5 (GUI)
+- pandas (CSV output)
+- PyInstaller (for .exe packaging)
+- Inno Setup (installer wizard)
+- YAML/JSON for config
 
-## Quick Start
-1. Install Python 3.8+
-2. Run: `pip install -r requirements.txt`
-3. Launch: `python ttn_extractor/gui/main.py`
-4. Select bureau/année presets, click \"Extraire\"
+## Quick Start (for dev)
+```bash
+# Install dependencies for local dev
+pip install pywinauto PyQt5 pandas pyyaml
 
-## Project Structure
-\`\`\`
-ttn_extractor/
-├── gui/          # French UI (PyQt6)
-├── core/         # Automation & extraction logic
-├── presets/      # YAML selectors & JSON presets
-├── logs/         # Session logs
-└── tests/        # Test suites
-\`\`\`
+# To run (main will come in Phase 2)
+python ttn_extractor/main.py
+```
+**Production**: Bundled as .exe, no setup.
+
+## Structure
+- `/ttn_extractor/`
+    - `/gui/` - PyQt5 GUI code
+    - `/core/` - Automation, extraction logic
+    - `/presets/` - YAML/JSON for selectors, bureau presets
+    - `/logs/` - Extraction logs, debug files
+    - `/tests/` - Unit and mock tests
+
+## Field Selector Example
+See `presets/selectors.yaml` for how manifest form fields are mapped for extraction.
+
+---
+
+**Documentation, test plan, and user support guide will be expanded in later phases.**
